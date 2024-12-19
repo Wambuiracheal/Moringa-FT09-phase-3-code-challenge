@@ -5,15 +5,15 @@ def main():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    cursor.execute('INSERT INTO authors (name) VALUES (?)', ("IRINE KIMETO",))
+    cursor.execute('INSERT INTO authors (name) VALUES (?)', ("Racheal Njuguna",))
     author_id = cursor.lastrowid
 
-    cursor.execute('INSERT INTO magazines (name, category) VALUES (?, ?)', ("ARUASA", "Food and Nutrition"))
+    cursor.execute('INSERT INTO magazines (name, category) VALUES (?, ?)', ("NEW YORK ", "Fashion Industry"))
     magazine_id = cursor.lastrowid
 
     cursor.execute('INSERT INTO articles (title, content, author_id, magazine_id) VALUES (?, ?, ?, ?)', 
-                   ("Different Types of Beverages in Kenya", 
-                    "The different types of beverages in Kenya; both alcoholic and non-alcoholic beverages.", 
+                   ("Different Types of Brands in kenya", 
+                    "The different types of brands in Kenya; both designer and non-design.", 
                     author_id, 
                     magazine_id))
 
